@@ -79,6 +79,51 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", quantity=" + quantity + ", price=" + price + ", description=" + description
+				+ ", name=" + name + ", brand=" + brand + ", category=" + category + ", image=" + image + "]";
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public Long getId() {
+		return id;
+	}
+	
+	
+	
 	
 	
 }

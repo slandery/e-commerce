@@ -2,6 +2,7 @@ package com.tts.ecommerce.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -19,9 +20,12 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     List<Product> findByBrandAndCategory(String brand, String category);
 
+    @Query("SELECT DISTINCT p.brand FROM Product p")
     List<String> findDistinctBrands();
 
+    @Query("SELECT DISTINCT p.category FROM Product p")
     List<String> findDistinctCategories();
 
 
+    
 }

@@ -13,6 +13,7 @@ import com.stripe.exception.ApiConnectionException;
 import com.stripe.exception.AuthenticationException;
 import com.stripe.exception.CardException;
 import com.stripe.exception.InvalidRequestException;
+import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
 import com.tts.ecommerce.model.ChargeRequest;
 
@@ -29,8 +30,7 @@ public class StripeService {
         Stripe.apiKey = secretKey;
     }
     public Charge charge(ChargeRequest chargeRequest) 
-      throws AuthenticationException, InvalidRequestException,
-        ApiConnectionException, CardException, APIException {
+      throws StripeException{
         Map<String, Object> chargeParams = new HashMap<>();
         chargeParams.put("amount", chargeRequest.getAmount());
         chargeParams.put("currency", chargeRequest.getCurrency());

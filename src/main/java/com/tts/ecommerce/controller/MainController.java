@@ -34,11 +34,11 @@ public class MainController {
 		
 	}
 	
-	@ModelAttribute("categories")
-	public List<String> categories() {
-		return productService.findDistinctCategories();
-		
-	}
+//	@ModelAttribute("categories")
+//	public List<String> categories() {
+//		return productService.findDistinctCategories();
+//		
+//	}
 	
 	@ModelAttribute("brands")
 	public List<String> brands() {

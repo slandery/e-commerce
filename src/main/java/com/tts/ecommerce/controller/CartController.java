@@ -60,7 +60,6 @@ public class CartController {
     }
 
     @PatchMapping("/cart")
-    
     public String updateQuantities(@RequestParam long[] id, @RequestParam int[] quantity) {
         for (int i = 0; i < id.length; i++) {
             Product p = productService.findById(id[i]);
@@ -85,4 +84,9 @@ public class CartController {
         userService.updateCart(cart());
     }
 
+	public CartController() {
+	}
+    
+    
+    
 }

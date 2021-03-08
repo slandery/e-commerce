@@ -13,18 +13,16 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 public class User implements UserDetails {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -95,5 +93,16 @@ public class User implements UserDetails {
 		return null;
 	}
 
+	public User(Long id, @NotEmpty String username, @NotEmpty String password, Map<Product, Integer> cart) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.cart = cart;
+	}
 
+	public User() {
+	}
+
+	
 }
